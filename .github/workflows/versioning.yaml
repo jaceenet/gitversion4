@@ -5,7 +5,9 @@ on:
     #     description: "postfix"
     #     required: true
     #     default: "beta"
-#github.event.inputs
+
+name: Versioning
+
 jobs:
   version:
     runs-on: ubuntu-latest

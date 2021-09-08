@@ -1,13 +1,13 @@
 on:
   workflow_dispatch:
-    inputs:
-      buildtag:
-        description: "tag"
-        required: true
-        default: "0.0.0-latest"
+    # inputs:
+    #   buildtag:
+    #     description: "postfix"
+    #     required: true
+    #     default: "beta"
 #github.event.inputs
 jobs:
-  branch_version:
+  version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +20,3 @@ jobs:
           skip-commit: "true"
           skip-version-file: "true"
       #          config-file-path: './changelog-config.js'
-
-      - name: see version
-        run: echo "${{ steps.nextversion.outputs.nextVersion }}"

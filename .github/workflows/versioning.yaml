@@ -24,7 +24,7 @@ jobs:
           skip-version-file: "true"
           skip-on-empty: false
 
-      - run: echo "RELEASE_VERSION=${{ steps.changelog.outputs.tag }}"
+      - run: echo "RELEASE_VERSION=${{ steps.changelog.outputs.version }}"
 
       - name: Build Docker Test
         if: ${{ steps.changelog.outputs.skipped == 'false' }}

@@ -26,4 +26,5 @@ jobs:
       - run: echo "RELEASE_VERSION=${{ steps.changelog.outputs.tag }}"
 
       - name: Build Docker Test
-        run: echo "RELEASE is ${{ env.RELEASE_VERSION }}"
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        run: echo "RELEASE is ${{ steps.changelog.outputs.tag }}"
